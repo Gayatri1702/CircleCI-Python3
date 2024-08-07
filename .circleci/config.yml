@@ -4,10 +4,10 @@ jobs:
   build:
     docker:
       - image: cimg/python:3.11
-      steps:
+    steps:
         - checkout
         - run: python main.py
-  test: 
+  test:
     docker:
       - image: cimg/python:3.11
     steps:
@@ -19,7 +19,7 @@ jobs:
     steps:
       - run: echo "practical done"
 
-workflow
+workflows:
   build_and_test_deploy:
     jobs:
       - build
